@@ -9,10 +9,22 @@ public class Progress {
         int amount = sc.nextInt(); // Количество чисел
         System.out.println("Введите число-знаменатель");
         int step = sc.nextInt(); // Шаг, с которым будут складываться числа
-        int number = 0; // Стартовое значение последовательности
-        for (int i=0; i < amount; i++) {
-            number+= step;
-            System.out.print(number + " ");
+        System.out.println("Какую прогрессию вывести? 1 - для арифметической"
+                + ", 2 - для геометрической");
+        int progr = sc.nextInt();
+        int number = 1; //Стартовое число прогрессии
+        if (progr == 1) {
+            for (int i = 0; i < amount; i++) { // Арифметическая прогрессия
+                System.out.print(number + " ");
+                number += step;
+            }
+        }
+        else {
+            for (int i = 0; i < amount; i++) { //Геометрическая прогрессия
+                System.out.print(number + " ");
+                number *= step;
+
+            }
         }
     }
 }
